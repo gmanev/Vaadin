@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+
+    <feature name="vaadin-bridge" version="${pom.version}">
+        <bundle>mvn:com.vaadin/vaadin/6.8.15</bundle>
+        <bundle>mvn:com.jjinterna.vaadin/vaadin-bridge/${pom.version}</bundle>
+    </feature>
+ 
+</features>

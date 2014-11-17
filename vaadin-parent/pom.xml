@@ -6,5 +6,6 @@
   <packaging>pom</packaging>
   <modules>
   	<module>vaadin-bridge</module>
+  	<module>vaadin-features</module>
   </modules>
 </project>
