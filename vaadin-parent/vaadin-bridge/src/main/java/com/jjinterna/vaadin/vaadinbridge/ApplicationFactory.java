@@ -1,20 +1,13 @@
 package com.jjinterna.vaadin.vaadinbridge;
 
-import com.vaadin.Application;
-import com.vaadin.Application.SystemMessages;
+import com.vaadin.ui.UI;
 
 public interface ApplicationFactory {
 
     static final String ALIAS_NAME = "alias";
 
-    Application newInstance();
-
-    String getApplicationCSSClassName();
-
-    /**
-     * Return system messages for the Application type, or {@code null} if there
-     * are no Application-specific system messages.
-     */
-    SystemMessages getSystemMessages();
+    Class<? extends UI> getUIClass();
+    
+    public UI getInstance();
 
 }

@@ -39,6 +39,7 @@ class TargetBundleHttpContext implements HttpContext {
             if (pkgAdmin != null) {
                 try {
                     ExportedPackage[] exportedPackages = pkgAdmin.getExportedPackages(importedPkgName);
+
                     // Find the one that's imported by the calling bundle
                     if (exportedPackages != null) {
                         outer:
@@ -65,6 +66,7 @@ class TargetBundleHttpContext implements HttpContext {
     }
 
     public URL getResource(String name) {
+    	System.out.println(name);
         Bundle bundle = getTargetBundle();
         return bundle != null ? bundle.getResource(name) : null;
     }

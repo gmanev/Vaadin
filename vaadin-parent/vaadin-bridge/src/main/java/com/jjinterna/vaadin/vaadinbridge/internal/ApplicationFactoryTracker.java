@@ -28,8 +28,7 @@ class ApplicationFactoryTracker extends ServiceTracker {
 			BundleContentHttpContext httpContext = new BundleContentHttpContext(ref.getBundle());
 			
 			ApplicationFactory factory = (ApplicationFactory) context.getService(ref);
-			ApplicationFactoryServlet servlet = new ApplicationFactoryServlet(factory);
-			
+			ApplicationServlet servlet = new ApplicationServlet(new ApplicationUIProvider(factory));
 			try {
 				httpService.registerServlet(alias, servlet, null, httpContext);
 				return alias;
