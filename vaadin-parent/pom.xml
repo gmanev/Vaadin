@@ -3,16 +3,80 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jjinterna.vaadin</groupId>
 	<artifactId>vaadin-parent</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.3.3</vaadin.version>
+		<vaadin.version>7.3.6</vaadin.version>
 	</properties>
 
 	<modules>
 		<module>vaadin-bridge</module>
 		<module>vaadin-features</module>
 	</modules>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>project</descriptorRef>
+					</descriptorRefs>
+					<tarLongFileMode>gnu</tarLongFileMode>
+					<formats>
+						<format>tar.gz</format>
+					</formats>
+				</configuration>
+ 
+				<executions>
+					<execution>
+						<id>dist-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+		</plugins>
+
+		<extensions>
+			<extension>
+				<groupId>org.springframework.build</groupId>
+				<artifactId>aws-maven</artifactId>
+				<version>4.8.0.RELEASE</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>maven-s3-release-repo</id>
+			<name>S3 Release Repository</name>
+			<url>s3://maven.newtechbtwebservices.net/release</url>
+		</repository>
+		<snapshotRepository>
+			<id>maven-s3-snapshot-repo</id>
+			<name>S3 Snapshot Repository</name>
+			<url>s3://maven.newtechbtwebservices.net/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
 </project>

@@ -66,7 +66,6 @@ class TargetBundleHttpContext implements HttpContext {
     }
 
     public URL getResource(String name) {
-    	System.out.println(name);
         Bundle bundle = getTargetBundle();
         return bundle != null ? bundle.getResource(name) : null;
     }
