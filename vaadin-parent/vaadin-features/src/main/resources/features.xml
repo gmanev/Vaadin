@@ -15,12 +15,12 @@
         <bundle>mvn:com.vaadin/vaadin-shared/${vaadin.version}</bundle>
         <bundle>mvn:com.vaadin/vaadin-server/${vaadin.version}</bundle>
         <bundle>mvn:com.vaadin/vaadin-client-compiled/${vaadin.version}</bundle>
-<!--    <bundle>mvn:com.vaadin/vaadin-push/${vaadin.version}</bundle> -->
+        <bundle>mvn:com.vaadin/vaadin-push/${vaadin.version}</bundle>
     </feature>
 
     <feature name="vaadin7-common" version="${vaadin.version}">
         <bundle>mvn:com.vaadin.external.flute/flute/1.3.0.gg2</bundle>
-<!--    <bundle>mvn:com.vaadin.external.atmosphere/atmosphere-runtime/2.1.2.vaadin6</bundle> -->
+        <bundle>mvn:com.vaadin.external.atmosphere/atmosphere-runtime/2.1.2.vaadin6</bundle>
 		<bundle>mvn:commons-codec/commons-codec/1.8</bundle>
 		<bundle>mvn:commons-io/commons-io/2.4</bundle>
         <bundle>mvn:org.apache.commons/commons-lang3/3.3.2</bundle>
